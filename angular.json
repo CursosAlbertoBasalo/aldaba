@@ -5,30 +5,83 @@
   },
   "defaultProject": "www",
   "schematics": {
-    "@nrwl/angular": {
-      "application": {
-        "linter": "eslint"
-      },
-      "library": {
-        "linter": "eslint"
-      },
-      "storybook-configuration": {
-        "linter": "eslint"
-      }
-    },
+    "@nrwl/angular": {},
     "@nrwl/angular:application": {
       "style": "css",
       "linter": "eslint",
       "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
+      "e2eTestRunner": "cypress",
+      "enableIvy": true,
+      "inlineStyle": true,
+      "prefix": "ab",
+      "routing": true,
+      "skipInstall": true,
+      "skipTests": true,
+      "strict": true,
+      "tags": "app"
     },
     "@nrwl/angular:library": {
       "style": "css",
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "buildable": true,
+      "directory": "domain",
+      "enableIvy": true,
+      "inlineStyle": true,
+      "prefix": "ab",
+      "simpleModuleName": true,
+      "skipInstall": true,
+      "skipTests": true,
+      "strict": true,
+      "tags": "lib"
     },
     "@nrwl/angular:component": {
+      "changeDetection": "OnPush",
+      "inlineStyle": true,
+      "skipTests": true,
       "style": "css"
+    },
+    "@schematics/angular:component": {
+      "changeDetection": "OnPush",
+      "inlineStyle": true,
+      "skipTests": true,
+      "style": "css"
+    },
+    "@nrwl/angular:service": {
+      "skipTests": true,
+      "flat": true
+    },
+    "@nrwl/angular:interceptor": {
+      "skipTests": true,
+      "flat": true
+    },
+    "@schematics/angular:interceptor": {
+      "skipTests": true,
+      "flat": true
+    },
+    "@nrwl/angular:guard": {
+      "skipTests": true,
+      "flat": true
+    },
+    "@schematics/angular:guard": {
+      "skipTests": true,
+      "flat": true
+    },
+    "@nrwl/angular:directive": {
+      "skipTests": true,
+      "flat": true
+    },
+    "@schematics/angular:directive": {
+      "skipTests": true,
+      "flat": true
+    },
+    "@nrwl/angular:pipe": {
+      "skipTests": false,
+      "flat": true
+    },
+    "@schematics/angular:pipe": {
+      "skipTests": false,
+      "flat": true
     }
   },
   "projects": {
@@ -47,8 +100,13 @@
             "polyfills": "apps/www/src/polyfills.ts",
             "tsConfig": "apps/www/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/www/src/favicon.ico", "apps/www/src/assets"],
-            "styles": ["apps/www/src/styles.css"],
+            "assets": [
+              "apps/www/src/favicon.ico",
+              "apps/www/src/assets"
+            ],
+            "styles": [
+              "apps/www/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -109,7 +167,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/www"],
+          "outputs": [
+            "coverage/apps/www"
+          ],
           "options": {
             "jestConfig": "apps/www/jest.config.js",
             "passWithNoTests": true
@@ -138,7 +198,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/www-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/www-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
