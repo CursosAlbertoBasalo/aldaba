@@ -20,6 +20,7 @@
     "www-e2e": { "tags": [], "implicitDependencies": ["www"] },
     "shared-global": { "tags": ["shared", "core"] },
     "shared-data": { "tags": ["shared", "core"] },
-    "shared-ui": { "tags": ["shared", "ui"] }
+    "shared-ui": { "tags": ["shared", "ui"] },
+    "shared-form": { "tags": ["shared", "ui"] }
   }
 }
