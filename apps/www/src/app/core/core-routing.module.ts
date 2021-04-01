@@ -11,6 +11,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('@ab/search').then((module) => module.SearchModule),
   },
+  {
+    path: 'not-found',
+    loadChildren: () =>
+      import('@ab/not-found').then((module) => module.NotFoundModule),
+  },
 ];
 
 @NgModule({
