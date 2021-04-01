@@ -82,6 +82,10 @@
     "@schematics/angular:pipe": {
       "skipTests": false,
       "flat": true
+    },
+    "@schematics/angular:service": {
+      "skipTests": true,
+      "flat": true
     }
   },
   "projects": {
