@@ -21,6 +21,7 @@
     "shared-global": { "tags": ["shared", "core"] },
     "shared-data": { "tags": ["shared", "core"] },
     "shared-ui": { "tags": ["shared", "ui"] },
-    "shared-form": { "tags": ["shared", "ui"] }
+    "shared-form": { "tags": ["shared", "ui"] },
+    "shared-layout": { "tags": ["shared", "ui"] }
   }
 }
