@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/www',
     '<rootDir>/libs/shared/global',
     '<rootDir>/libs/shared/data',
+    '<rootDir>/libs/shared/ui',
   ],
 };
