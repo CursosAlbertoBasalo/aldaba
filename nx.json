@@ -1,34 +1,24 @@
 {
   "implicitDependencies": {
     "angular.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-  "affected": {
-    "defaultBase": "main"
-  },
+  "affected": { "defaultBase": "main" },
   "npmScope": "ab",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "www": {
-      "tags": []
-    },
-    "www-e2e": {
-      "tags": [],
-      "implicitDependencies": ["www"]
-    }
+    "www": { "tags": [] },
+    "www-e2e": { "tags": [], "implicitDependencies": ["www"] },
+    "shared-global": { "tags": ["shared", "core"] },
+    "shared-data": { "tags": ["shared", "core"] }
   }
 }
