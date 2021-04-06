@@ -104,8 +104,14 @@
             "polyfills": "apps/www/src/polyfills.ts",
             "tsConfig": "apps/www/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/www/src/favicon.ico", "apps/www/src/assets"],
-            "styles": ["apps/www/src/styles.css"],
+            "assets": [
+              "apps/www/src/favicon.ico",
+              "apps/www/src/assets"
+            ],
+            "styles": [
+              "apps/www/src/styles.css",
+              "node_modules/bulma/css/bulma.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -166,7 +172,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/www"],
+          "outputs": [
+            "coverage/apps/www"
+          ],
           "options": {
             "jestConfig": "apps/www/jest.config.js",
             "passWithNoTests": true
@@ -195,7 +203,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/www-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/www-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -229,7 +239,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/global"],
+          "outputs": [
+            "coverage/libs/shared/global"
+          ],
           "options": {
             "jestConfig": "libs/shared/global/jest.config.js",
             "passWithNoTests": true
@@ -266,7 +278,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/data"],
+          "outputs": [
+            "coverage/libs/shared/data"
+          ],
           "options": {
             "jestConfig": "libs/shared/data/jest.config.js",
             "passWithNoTests": true
@@ -303,7 +317,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/ui"],
+          "outputs": [
+            "coverage/libs/shared/ui"
+          ],
           "options": {
             "jestConfig": "libs/shared/ui/jest.config.js",
             "passWithNoTests": true
@@ -340,7 +356,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/form"],
+          "outputs": [
+            "coverage/libs/shared/form"
+          ],
           "options": {
             "jestConfig": "libs/shared/form/jest.config.js",
             "passWithNoTests": true
@@ -377,7 +395,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/layout"],
+          "outputs": [
+            "coverage/libs/shared/layout"
+          ],
           "options": {
             "jestConfig": "libs/shared/layout/jest.config.js",
             "passWithNoTests": true
@@ -414,7 +434,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/domain/home"],
+          "outputs": [
+            "coverage/libs/domain/home"
+          ],
           "options": {
             "jestConfig": "libs/domain/home/jest.config.js",
             "passWithNoTests": true
@@ -451,7 +473,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/domain/search"],
+          "outputs": [
+            "coverage/libs/domain/search"
+          ],
           "options": {
             "jestConfig": "libs/domain/search/jest.config.js",
             "passWithNoTests": true
@@ -488,7 +512,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/domain/not-found"],
+          "outputs": [
+            "coverage/libs/domain/not-found"
+          ],
           "options": {
             "jestConfig": "libs/domain/not-found/jest.config.js",
             "passWithNoTests": true
