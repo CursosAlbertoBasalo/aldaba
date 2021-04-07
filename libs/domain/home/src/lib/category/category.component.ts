@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'ab-ui-header',
-  templateUrl: './header.component.html',
+  selector: 'ab-category',
+  templateUrl: './category.component.html',
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent {}
+export class CategoryComponent {}
