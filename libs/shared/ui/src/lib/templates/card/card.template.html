@@ -1,1 +1,22 @@
-<p>card works!</p>
+<article class="card mb-4">
+  <header class="card-header">
+    <p class="card-header-title">
+      <a *ngIf="card.link" [routerLink]="[card.link]">{{ card.title }}</a>
+      <a *ngIf="card.href" [href]="card.href">{{ card.title }}</a>
+      <span *ngIf="!card.link && !card.href">{{ card.title }}</span>
+    </p>
+  </header>
+  <main class="card-content">
+    <div *ngIf="!!card.description" class="content">
+      {{ card.description }}
+    </div>
+    <div *ngIf="!card.description" class="content">
+      <ng-content select=".content">
+      </ng-content>
+    </div>
+  </main>
+  <footer class="card-footer">
+    <ng-content select=".footer-content">
+    </ng-content>
+  </footer>
+</article>

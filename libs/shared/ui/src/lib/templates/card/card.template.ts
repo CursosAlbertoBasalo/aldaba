@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Card } from '@ab/ui';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'ab-ui-card',
@@ -6,4 +7,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CardTemplate {}
+export class CardTemplate {
+  @Input() card: Card = { title: '', description: '' };
+}

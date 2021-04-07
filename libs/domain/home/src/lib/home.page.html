@@ -1,1 +1,7 @@
-<p>home works!</p>
+<main>
+  <ab-ui-header [header]="header"></ab-ui-header>
+  <ab-category-list
+                    *ngIf="categories$ | async as categories"
+                    [categories]="categories">
+  </ab-category-list>
+</main>

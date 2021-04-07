@@ -1,1 +1,9 @@
-<p>category works!</p>
+<section class="section mt-4 mb-4">
+  <ab-ui-header [header]="header"></ab-ui-header>
+  <section class="mt-4 mb-4 columns">
+    <ab-ui-card *ngFor="let category of categories"
+                [card]="getCardFrom(category)"
+                class="column">
+    </ab-ui-card>
+  </section>
+</section>
