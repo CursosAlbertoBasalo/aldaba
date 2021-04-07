@@ -1,6 +1,13 @@
-<header class="flex">
-  <h1>Welcome to {{ title }}!</h1>
-</header>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/"> <strong class="ml-4 is-size-2">{{ title }}</strong> </a>
+  </div>
+</nav>
 <main>
   <router-outlet></router-outlet>
 </main>
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p> by <a href="https://twitter.com/albertobasalo">By Alberto Basalo</a>.</p>
+  </div>
+</footer>

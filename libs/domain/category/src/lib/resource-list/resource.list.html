@@ -1,0 +1,9 @@
+<section class="section mt-4 mb-4">
+  <ab-ui-header [header]="getHeader()"></ab-ui-header>
+  <section class="columns">
+    <ab-ui-card *ngFor="let resource of resources"
+                [card]="getCardFrom(resource)"
+                class="column">
+    </ab-ui-card>
+  </section>
+</section>

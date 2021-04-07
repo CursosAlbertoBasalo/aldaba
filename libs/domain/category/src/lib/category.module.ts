@@ -1,16 +1,18 @@
-import { NgModule } from '@angular/core';
+import { UiModule } from '@ab/ui';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CategoryPage } from './category.page';
-import { CategoryComponent } from './category/category.component';
+import { ResourceList } from './resource-list/resource.list';
 
 @NgModule({
   imports: [
     CommonModule,
+    UiModule,
     RouterModule.forChild([
-      /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
+      { path: ':id', pathMatch: 'full', component: CategoryPage },
     ]),
   ],
-  declarations: [CategoryPage, CategoryComponent],
+  declarations: [CategoryPage, ResourceList],
 })
 export class CategoryModule {}

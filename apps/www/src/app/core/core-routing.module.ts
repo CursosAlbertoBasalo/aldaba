@@ -7,9 +7,9 @@ const routes: Routes = [
     loadChildren: () => import('@ab/home').then((module) => module.HomeModule),
   },
   {
-    path: 'search',
+    path: 'category',
     loadChildren: () =>
-      import('@ab/search').then((module) => module.SearchModule),
+      import('@ab/category').then((module) => module.CategoryModule),
   },
   {
     path: 'not-found',
@@ -17,14 +17,22 @@ const routes: Routes = [
       import('@ab/not-found').then((module) => module.NotFoundModule),
   },
   {
-    path: 'category',
+    path: 'search',
     loadChildren: () =>
-      import('@ab/category').then((module) => module.CategoryModule),
+      import('@ab/search').then((module) => module.SearchModule),
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot([
+      ...routes,
+      {
+        path: '**',
+        redirectTo: 'not-found',
+      },
+    ]),
+  ],
   exports: [RouterModule],
 })
 export class CoreRoutingModule {}
