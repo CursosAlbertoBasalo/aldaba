@@ -22,7 +22,8 @@
       "@ab/layout": ["libs/shared/layout/src/index.ts"],
       "@ab/home": ["libs/domain/home/src/index.ts"],
       "@ab/search": ["libs/domain/search/src/index.ts"],
-      "@ab/not-found": ["libs/domain/not-found/src/index.ts"]
+      "@ab/not-found": ["libs/domain/not-found/src/index.ts"],
+      "@ab/category": ["libs/domain/category/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -3,11 +3,11 @@ import { Category } from '../models/category';
 
 @Component({
   selector: 'ab-category-list',
-  templateUrl: './category.component.html',
+  templateUrl: './category.list.html',
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CategoryComponent {
+export class CategoryList {
   @Input() categories: Category[] = [];
 
   header = {
@@ -16,6 +16,7 @@ export class CategoryComponent {
     subtitle: 'Coming soon...',
   };
 
+  // ToDo: move to a Pipe
   getCardFrom(category: Category) {
     return {
       title: category.name,

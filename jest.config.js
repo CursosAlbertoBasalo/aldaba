@@ -9,5 +9,6 @@ module.exports = {
     '<rootDir>/libs/domain/home',
     '<rootDir>/libs/domain/search',
     '<rootDir>/libs/domain/not-found',
+    '<rootDir>/libs/domain/category',
   ],
 };

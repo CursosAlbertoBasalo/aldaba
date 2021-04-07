@@ -2,7 +2,7 @@ import { UiModule } from '@ab/ui';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CategoryComponent } from './category/category.component';
+import { CategoryList } from './category-list/category.list';
 import { HomePage } from './home.page';
 
 @NgModule({
@@ -13,6 +13,6 @@ import { HomePage } from './home.page';
     ]),
     UiModule,
   ],
-  declarations: [HomePage, CategoryComponent],
+  declarations: [HomePage, CategoryList],
 })
 export class HomeModule {}

@@ -16,6 +16,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('@ab/not-found').then((module) => module.NotFoundModule),
   },
+  {
+    path: 'category',
+    loadChildren: () =>
+      import('@ab/category').then((module) => module.CategoryModule),
+  },
 ];
 
 @NgModule({
