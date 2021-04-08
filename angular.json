@@ -388,6 +388,43 @@
         }
       }
     },
+    "shared-auth": {
+      "projectType": "library",
+      "root": "libs/shared/auth",
+      "sourceRoot": "libs/shared/auth/src",
+      "prefix": "ab",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/shared/auth/tsconfig.lib.json",
+            "project": "libs/shared/auth/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/auth/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/auth/src/**/*.ts",
+              "libs/shared/auth/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/auth"],
+          "options": {
+            "jestConfig": "libs/shared/auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "domain-home": {
       "projectType": "library",
       "root": "libs/domain/home",
@@ -573,21 +610,21 @@
         }
       }
     },
-    "domain-auth": {
+    "domain-resource-new": {
       "projectType": "library",
-      "root": "libs/domain/auth",
-      "sourceRoot": "libs/domain/auth/src",
+      "root": "libs/domain/resource-new",
+      "sourceRoot": "libs/domain/resource-new/src",
       "prefix": "ab",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
           "options": {
-            "tsConfig": "libs/domain/auth/tsconfig.lib.json",
-            "project": "libs/domain/auth/ng-package.json"
+            "tsConfig": "libs/domain/resource-new/tsconfig.lib.json",
+            "project": "libs/domain/resource-new/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/domain/auth/tsconfig.lib.prod.json"
+              "tsConfig": "libs/domain/resource-new/tsconfig.lib.prod.json"
             }
           }
         },
@@ -595,16 +632,16 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/domain/auth/src/**/*.ts",
-              "libs/domain/auth/src/**/*.html"
+              "libs/domain/resource-new/src/**/*.ts",
+              "libs/domain/resource-new/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/domain/auth"],
+          "outputs": ["coverage/libs/domain/resource-new"],
           "options": {
-            "jestConfig": "libs/domain/auth/jest.config.js",
+            "jestConfig": "libs/domain/resource-new/jest.config.js",
             "passWithNoTests": true
           }
         }

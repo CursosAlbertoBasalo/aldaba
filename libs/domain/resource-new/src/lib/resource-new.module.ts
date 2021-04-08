@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { AuthWidget } from './auth.widget';
-import { LoginPage } from './login.page';
-import { LoginForm } from './login/login.form';
+import { ResourceNewPage } from './resource-new.page';
+import { ResourceNewComponent } from './resource-new/resource-new.component';
 
 @NgModule({
   imports: [
@@ -12,7 +11,6 @@ import { LoginForm } from './login/login.form';
       /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
     ]),
   ],
-  declarations: [AuthWidget, LoginPage, LoginForm],
-  exports: [AuthWidget],
+  declarations: [ResourceNewPage, ResourceNewComponent],
 })
-export class AuthModule {}
+export class ResourceNewModule {}

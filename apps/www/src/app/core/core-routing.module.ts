@@ -41,6 +41,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('@ab/auth').then((module) => module.AuthModule),
       },
+      {
+        path: 'resource-new',
+        loadChildren: () =>
+          import('@ab/resource-new').then((module) => module.ResourceNewModule),
+      },
     ]),
   ],
   exports: [RouterModule],
