@@ -7,7 +7,7 @@ import { Category } from './models/category';
   providedIn: 'root',
 })
 export class HomeService {
-  private readonly categoriesUrl = `https://api-angular-builders.herokuapp.com/v1/categories`;
+  private readonly categoriesUrl = `https://api-angularbuilders.herokuapp.com/v1/categories`;
 
   constructor(private http: HttpClient) {}
 

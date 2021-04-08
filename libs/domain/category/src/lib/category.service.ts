@@ -8,7 +8,7 @@ import { Resource } from './models/resource';
   providedIn: 'root',
 })
 export class CategoryService {
-  private readonly categoriesUrl = `https://api-angular-builders.herokuapp.com/v1/categories`;
+  private readonly categoriesUrl = `https://api-angularbuilders.herokuapp.com/v1/categories`;
   constructor(private http: HttpClient) {}
   getCategoryById$(categoryId: string) {
     return this.http
