@@ -18,16 +18,16 @@
   "projects": {
     "www": { "tags": [] },
     "www-e2e": { "tags": [], "implicitDependencies": ["www"] },
-    "shared-global": { "tags": ["shared", "core"] },
+    "shared-auth": { "tags": ["shared", "page"] },
     "shared-data": { "tags": ["shared", "core"] },
-    "shared-ui": { "tags": ["shared", "ui"] },
     "shared-form": { "tags": ["shared", "ui"] },
+    "shared-global": { "tags": ["shared", "core"] },
     "shared-layout": { "tags": ["shared", "ui"] },
+    "shared-ui": { "tags": ["shared", "ui"] },
     "domain-home": { "tags": ["domain", "page"] },
     "domain-search": { "tags": ["domain", "page"] },
     "domain-not-found": { "tags": ["domain", "page"] },
     "domain-category": { "tags": ["domain", "page"] },
-    "domain-resource": { "tags": ["domain", "route"] },
-    "domain-auth": { "tags": ["shared", "page"] }
+    "domain-resource": { "tags": ["domain", "page"] }
   }
 }
