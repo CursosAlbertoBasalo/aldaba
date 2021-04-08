@@ -23,7 +23,8 @@
       "@ab/home": ["libs/domain/home/src/index.ts"],
       "@ab/search": ["libs/domain/search/src/index.ts"],
       "@ab/not-found": ["libs/domain/not-found/src/index.ts"],
-      "@ab/category": ["libs/domain/category/src/index.ts"]
+      "@ab/category": ["libs/domain/category/src/index.ts"],
+      "@ab/resource": ["libs/domain/resource/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

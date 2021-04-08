@@ -17,6 +17,11 @@ const routes: Routes = [
       import('@ab/not-found').then((module) => module.NotFoundModule),
   },
   {
+    path: 'resource',
+    loadChildren: () =>
+      import('@ab/resource').then((module) => module.ResourceModule),
+  },
+  {
     path: 'search',
     loadChildren: () =>
       import('@ab/search').then((module) => module.SearchModule),
