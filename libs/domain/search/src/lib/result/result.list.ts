@@ -1,13 +1,13 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'ab-search',
-  templateUrl: './search.component.html',
+  selector: 'ab-result',
+  templateUrl: './result.list.html',
   styles: [
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SearchComponent implements OnInit {
+export class ResultList implements OnInit {
 
   constructor() { }
 

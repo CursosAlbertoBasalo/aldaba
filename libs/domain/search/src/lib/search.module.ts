@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SearchPage } from './search.page';
-import { SearchComponent } from './search/search.component';
+import { ResultList } from './result/result.list';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild([
-      /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
+      { path: '', pathMatch: 'full', component: SearchPage },
     ]),
   ],
-  declarations: [SearchPage, SearchComponent],
+  declarations: [SearchPage, ResultList],
 })
 export class SearchModule {}
