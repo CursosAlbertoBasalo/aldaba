@@ -36,6 +36,11 @@ const routes: Routes = [
         path: '**',
         redirectTo: 'not-found',
       },
+      {
+        path: 'auth',
+        loadChildren: () =>
+          import('@ab/auth').then((module) => module.AuthModule),
+      },
     ]),
   ],
   exports: [RouterModule],

@@ -27,6 +27,7 @@
     "domain-search": { "tags": ["domain", "page"] },
     "domain-not-found": { "tags": ["domain", "page"] },
     "domain-category": { "tags": ["domain", "page"] },
-    "domain-resource": { "tags": ["domain", "route"] }
+    "domain-resource": { "tags": ["domain", "route"] },
+    "domain-auth": { "tags": ["shared", "page"] }
   }
 }
