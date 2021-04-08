@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate, CanLoad {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return false;
+    return true;
   }
   canLoad(
     route: Route,
@@ -32,6 +32,6 @@ export class AuthGuard implements CanActivate, CanLoad {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return false;
+    return true;
   }
 }

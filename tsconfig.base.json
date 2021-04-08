@@ -25,7 +25,7 @@
       "@ab/not-found": ["libs/domain/not-found/src/index.ts"],
       "@ab/category": ["libs/domain/category/src/index.ts"],
       "@ab/resource": ["libs/domain/resource/src/index.ts"],
-      "@ab/auth": ["libs/domain/auth/src/index.ts"],
+      "@ab/auth": ["libs/shared/auth/src/index.ts"],
       "@ab/resource-new": ["libs/domain/resource-new/src/index.ts"]
     }
   },
