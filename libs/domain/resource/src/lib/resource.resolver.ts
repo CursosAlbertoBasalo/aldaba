@@ -4,18 +4,20 @@ import {
   Resolve,
   RouterStateSnapshot,
 } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { Resource } from './models/resource';
 import { ResourceService } from './resource.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ResourceResolver implements Resolve<boolean> {
+export class ResourceResolver implements Resolve<Resource> {
   constructor(private service: ResourceService) {}
+
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<boolean> {
-    return of(true);
+  ): Observable<Resource> {
+    return this.service.getResourceById$(route.params.id);
   }
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ResourcePage } from './resource.page';
+import { ResourceResolver } from './resource.resolver';
 @NgModule({
   imports: [
     CommonModule,
@@ -11,6 +12,9 @@ import { ResourcePage } from './resource.page';
         path: ':id',
         pathMatch: 'full',
         component: ResourcePage,
+        resolve: {
+          resource: ResourceResolver,
+        },
       },
     ]),
     UiModule,

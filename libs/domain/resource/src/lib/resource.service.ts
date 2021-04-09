@@ -9,7 +9,9 @@ import { Resource } from './models/resource';
 export class ResourceService {
   private readonly resourcesUrl =
     'https://api-angularbuilders.herokuapp.com/v1/resources';
+
   constructor(private http: HttpClient) {}
+
   getResourceById$(resourceId: string) {
     return this.http
       .get<{ data: Resource }>(`${this.resourcesUrl}/${resourceId}`)
