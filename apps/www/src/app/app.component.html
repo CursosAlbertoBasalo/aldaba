@@ -2,6 +2,11 @@
   <div class="navbar-brand">
     <a class="navbar-item" href="/"> <strong class="ml-4 is-size-2">{{ title }}</strong> </a>
   </div>
+  <div id="navbarItems" class="navbar-menu is-active">
+    <div class="navbar-end">
+      <a [routerLink]="['resource-new']">Add a resource</a>
+    </div>
+  </div>
 </nav>
 <main>
   <router-outlet></router-outlet>
