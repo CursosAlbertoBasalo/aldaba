@@ -1,1 +1,16 @@
-<p>navbar works!</p>
+<nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" [routerLink]="['/']">
+      <strong class="ml-4 is-size-2">Aldaba</strong> </a>
+  </div>
+  <div id="navbarItems" class="navbar-menu is-active">
+    <ng-content select=".navbar-start">
+    </ng-content>
+    <div class="navbar-end">
+      <ab-notification *ngIf="notification$ | async as notification"
+                       [notification]="notification">
+      </ab-notification>
+      <span *ngIf="loading$ | async">📡</span>
+    </div>
+  </div>
+</nav>
