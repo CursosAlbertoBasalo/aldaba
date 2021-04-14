@@ -1,16 +1,20 @@
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+import { Action } from './models/action';
 
 export class Store<T> {
   private _state$: BehaviorSubject<T>;
-  private _action$: BehaviorSubject<{ type: string; payload: any }>;
+  private _actions$: BehaviorSubject<Action>;
 
   constructor(initialState: T) {
-    this._state$ = new BehaviorSubject(this.getClone(initialState));
-    this._action$ = new BehaviorSubject({
+    this._state$ = new BehaviorSubject({ ...initialState });
+    const initialAction = {
       type: 'INIT',
       payload: initialState,
-    });
+    };
+    this._actions$ = new BehaviorSubject(initialAction);
+
   }
 
   public getSnapshot() {
@@ -21,6 +25,7 @@ export class Store<T> {
       .asObservable()
       .pipe(map((state) => this.getClone(state)));
   }
+
   public setState(newState: Partial<T>) {
     this._state$.next(this.getClone({ ...this._state$.value, ...newState }));
   }
@@ -40,6 +45,14 @@ export class Store<T> {
 
   private getClone(source: T) {
     return JSON.parse(JSON.stringify(source));
+  }
+  dispatch(action: Action): void {
+    this.setState(action.payload);
+    this._actions$.next(action);
+  }
+
+  getActions$(): Observable<Action> {
+    return this._actions$.asObservable();
   }
 }
 
@@ -75,7 +88,6 @@ export class Store<T> {
 //   seis.numero;// 'asdfasfd'
 
 // }
-
 // const h = { resto: 123, fecha: '2021-12-31' };
 // const y = {
 //   saldo: 12,

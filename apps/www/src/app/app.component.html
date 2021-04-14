@@ -1,14 +1,6 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/"> <strong class="ml-4 is-size-2">{{ title }}</strong> </a>
-  </div>
-  <div id="navbarItems" class="navbar-menu is-active">
-    <ab-search-box-widget></ab-search-box-widget>
-    <div class="navbar-end">
-      <a [routerLink]="['resource-new']">Add a resource</a>
-    </div>
-  </div>
-</nav>
+<ab-navbar>
+  <ab-search-box-widget class="navbar-start"></ab-search-box-widget>
+</ab-navbar>
 <main>
   <router-outlet></router-outlet>
 </main>
