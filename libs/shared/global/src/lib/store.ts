@@ -1,6 +1,5 @@
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 import { Action } from './models/action';
 
 export class Store<T> {
@@ -14,7 +13,6 @@ export class Store<T> {
       payload: initialState,
     };
     this._actions$ = new BehaviorSubject(initialAction);
-
   }
 
   public getSnapshot() {
@@ -31,7 +29,7 @@ export class Store<T> {
   }
   public dispatch(action: { type: string; payload: any }) {
     this.setState(action.payload);
-    this._action$.next(action);
+    this._actions$.next(action);
   }
   // public reduce(action: { type: string, payload: any }, reducer: (currentState: T,  payload:any)=>T  ) {
   //   const newState = reducer(this.getSnapshot(),  action.payload);
@@ -40,19 +38,11 @@ export class Store<T> {
   // }
 
   public getActions$() {
-    return this._action$.asObservable();
+    return this._actions$.asObservable();
   }
 
   private getClone(source: T) {
     return JSON.parse(JSON.stringify(source));
-  }
-  dispatch(action: Action): void {
-    this.setState(action.payload);
-    this._actions$.next(action);
-  }
-
-  getActions$(): Observable<Action> {
-    return this._actions$.asObservable();
   }
 }
 
