@@ -2,7 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   Input,
-  OnInit,
+  OnChanges,
   SimpleChanges,
 } from '@angular/core';
 import { BehaviorSubject, timer } from 'rxjs';
@@ -14,15 +14,10 @@ import { Notification } from '../models/notification';
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NotificationComponent implements OnInit {
+export class NotificationComponent implements OnChanges {
   @Input() notification: Notification = { class: '', message: '' };
 
   show$ = new BehaviorSubject<boolean>(false);
-
-  constructor() {}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.show$.next(true);

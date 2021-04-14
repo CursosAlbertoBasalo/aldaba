@@ -1,8 +1,8 @@
 import { TrackerInterceptor } from '@ab/data';
-import { TrackerStore } from '@ab/global';
+import { ErrorHandlerService, TrackerStore } from '@ab/global';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
@@ -15,6 +15,10 @@ import { CoreRoutingModule } from './core-routing.module';
       provide: HTTP_INTERCEPTORS,
       useClass: TrackerInterceptor,
       multi: true,
+    },
+    {
+      provide: ErrorHandler,
+      useClass: ErrorHandlerService,
     },
   ],
 })
@@ -30,6 +34,7 @@ export class CoreModule {
             label: (routerEvent as NavigationEnd).urlAfterRedirects,
           }),
       });
+
     if (environment.production === false) {
       // ToDo: Use Redux DevTools
       tracker.selectActions$().subscribe((action) => console.table(action));

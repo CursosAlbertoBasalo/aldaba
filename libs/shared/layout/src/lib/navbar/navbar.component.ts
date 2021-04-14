@@ -12,11 +12,12 @@ import { Notification } from '../models/notification';
 })
 export class NavbarComponent {
   notification$: Observable<Notification>;
+
   loading$: Observable<boolean>;
 
-  constructor(store: TrackerStore) {
+  constructor(tracker: TrackerStore) {
     // ToDo: create specific notifications by error event kind
-    const error$ = store.selectAnyErrors$().pipe(
+    const error$ = tracker.selectAnyErrors$().pipe(
       map(() => ({
         class: 'is-danger',
         message:
@@ -24,7 +25,7 @@ export class NavbarComponent {
       }))
     );
     // ToDo: use another store for user notifications
-    const success$ = store.selectByEvent$('NEW_RESOURCE').pipe(
+    const success$ = tracker.selectByEvent$('NEW_RESOURCE').pipe(
       map((trackEntry) => ({
         class: 'is-success',
         message: trackEntry.label || 'Success',
@@ -32,8 +33,23 @@ export class NavbarComponent {
     );
     this.notification$ = merge(error$, success$);
 
-    const callStart$ = store.selectByEvent$('CALL_START').pipe(map(() => true));
-    const callEnd$ = store.selectByEvent$('CALL_END').pipe(map(() => false));
+    const callStart$ = tracker
+      .selectByEvent$('CALL_START')
+      .pipe(map(() => true));
+    const callEnd$ = tracker.selectByEvent$('CALL_END').pipe(map(() => false));
     this.loading$ = merge(callStart$, callEnd$);
+
+    // this.loading$ = tracker.getState$().pipe(
+    //   filter(
+    //     (entry) => entry.event === 'CALL_START' || entry.event === 'CALL_END'
+    //   ),
+    //   map((entry) => {
+    //     if (entry.event === 'CALL_START') {
+    //       return true;
+    //     } else {
+    //       return false;
+    //     }
+    //   })
+    // );
   }
 }

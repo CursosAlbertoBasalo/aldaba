@@ -1,4 +1,4 @@
-import { TrackEntry, TrackerStore } from '@ab/global';
+import { TrackerEntry, TrackerStore } from '@ab/global';
 import {
   HttpErrorResponse,
   HttpEvent,
@@ -19,12 +19,14 @@ export class TrackerInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const startTimestamp = new Date().getTime();
+
     this.store.trackEntry({
       category: 'SYSTEM',
       event: 'CALL_START',
       label: request.method + ' @ ' + request.url,
       value: startTimestamp,
     });
+
     return next.handle(request).pipe(
       tap((res) => {
         if (res.type === 0) return; // cors preflight
@@ -37,8 +39,9 @@ export class TrackerInterceptor implements HttpInterceptor {
           value: responseTime,
         });
       }),
+
       catchError((error: HttpErrorResponse) => {
-        const errorEntry: TrackEntry = {
+        const errorEntry: TrackerEntry = {
           category: 'ERROR',
           event: 'CODE_FAULT',
         };

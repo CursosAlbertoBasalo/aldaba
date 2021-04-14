@@ -1,4 +1,4 @@
-export interface TrackEntry {
+export interface TrackerEntry {
   category: TrackerCategories;
   event: string;
   label?: string;
