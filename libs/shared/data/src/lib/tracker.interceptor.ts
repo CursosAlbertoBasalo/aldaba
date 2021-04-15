@@ -60,6 +60,14 @@ export class TrackerInterceptor implements HttpInterceptor {
           errorEntry.value = error.status;
         }
         this.store.trackEntry(errorEntry);
+        const endTimestamp: number = new Date().getTime();
+        const responseTime = endTimestamp - startTimestamp;
+        this.store.trackEntry({
+          category: 'SYSTEM',
+          event: 'CALL_END',
+          label: request.method + ' @ ' + request.url,
+          value: responseTime,
+        });
         return throwError(error);
       })
     );

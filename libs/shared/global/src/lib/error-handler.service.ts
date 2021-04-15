@@ -10,7 +10,7 @@ export class ErrorHandlerService implements ErrorHandler {
     this.tracker.trackEntry({
       category: 'ERROR',
       event: 'CODE_FAULT',
-      label: error.message,
+      label: error.message + ' @ ' + error.stack || 'unknown',
     });
   }
 }

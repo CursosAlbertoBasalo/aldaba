@@ -1,1 +1,15 @@
-<p>control works!</p>
+<div class="field mt-4">
+  <label [for]="formControlName" class="label">
+    {{ label }} <span *ngIf="hasError()">*</span>
+  </label>
+  <input [name]="formControlName"
+         [type]="type"
+         [id]="formControlName"
+         [value]="value"
+         (input)="onInput($event)"
+         [placeholder]="placeholder"
+         class="input" autocomplete="off" />
+  <span *ngIf="hasErrorToShow()">
+    <em> {{ getErrorMessage() }} </em>
+  </span>
+</div>

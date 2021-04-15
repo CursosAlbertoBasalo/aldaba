@@ -6,7 +6,8 @@
   <div id="navbarItems" class="navbar-menu is-active">
     <ng-content select=".navbar-start">
     </ng-content>
-    <div class="navbar-end">
+    <div class="navbar-end mt-4 mr-4">
+      <a [routerLink]="['/resource-new']" class="button ">Add new Resource</a>
       <ab-notification *ngIf="notification$ | async as notification"
                        [notification]="notification">
       </ab-notification>

@@ -1,0 +1,44 @@
+<form [formGroup]="form" (submit)="onSubmit()" class="box mt-4 mb-4" autocomplete="off">
+  <fieldset class="mb-4">
+    <div class="field mt-4 ">
+      <label for="categoryId" class="label"> A category </label>
+      <select id="categoryId" formControlName="categoryId" class="select" #selector>
+        <option *ngFor="let option of categories"
+                [value]="option.id" #selector>
+          {{ option.name }}
+        </option>
+      </select>
+    </div>
+    <ab-form-control
+                     [form]="form"
+                     formControlName="resourcename"
+                     type="text"
+                     [label]="'The resource commercial name'"
+                     [placeholder]="'The ngSuperTool'">
+    </ab-form-control>
+    <ab-form-control
+                     [form]="form"
+                     formControlName="description"
+                     type="text"
+                     [label]="'A short description'"
+                     placeholder="Cool things about the resource">
+    </ab-form-control>
+    <ab-form-control
+                     [form]="form"
+                     type="url"
+                     formControlName="url"
+                     [label]="'The home page'"
+                     [placeholder]="'https://www.ng-super-tool.dev'">
+    </ab-form-control>
+    <ab-form-control
+                     [form]="form"
+                     type="number"
+                     formControlName="price"
+                     [label]="'If it is for selling (in US $)'"
+                     [placeholder]="'99.9'">
+    </ab-form-control>
+    <ab-course-form [hidden]="form.value.categoryId !=='courses'"></ab-course-form>
+  </fieldset>
+  <input type="submit" value="Add to the catalog!" [disabled]="form.invalid"
+         class="button is-link mt-4" />
+</form>
