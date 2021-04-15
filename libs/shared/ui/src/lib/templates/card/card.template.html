@@ -1,14 +1,14 @@
 <article class="card mb-4">
   <header class="card-header">
     <p class="card-header-title">
-      <a *ngIf="card.link" [routerLink]="[card.link]">{{ card.title }}</a>
-      <a *ngIf="card.href" [href]="card.href">{{ card.title }}</a>
+      <a *ngIf="card.link" [routerLink]="[card.link]" [abUiTrack]="card.title">{{ card.title }}</a>
+      <a *ngIf="card.href" [href]="card.href" [abUiTrack]="card.title">{{ card.title }}</a>
       <span *ngIf="!card.link && !card.href">{{ card.title }}</span>
     </p>
   </header>
   <main class="card-content">
     <div *ngIf="!!card.description" class="content">
-      {{ card.description }}
+      {{ card.description | truncate:50 }}
     </div>
     <div *ngIf="!card.description" class="content">
       <ng-content select=".content">
