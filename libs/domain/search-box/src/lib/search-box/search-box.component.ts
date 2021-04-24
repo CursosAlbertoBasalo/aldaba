@@ -21,7 +21,6 @@ export class SearchBoxComponent implements AfterViewInit {
   @Input() set initial(value: string) {
     console.log(value);
     if (this.searchInput && !!value) {
-      console.log('entra');
       this.searchInput.nativeElement.value = value;
     }
   }

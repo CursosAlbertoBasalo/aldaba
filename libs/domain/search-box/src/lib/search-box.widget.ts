@@ -35,7 +35,6 @@ export class SearchBoxWidget implements OnInit {
   }
 
   onSearch(searchTerm: string) {
-    console.warn(searchTerm);
     if (this.current === searchTerm) return;
     this.current = searchTerm;
     if (searchTerm.length >= 2) {

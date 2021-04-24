@@ -1,3 +1,4 @@
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { AuthGuard } from '@ab/auth';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
