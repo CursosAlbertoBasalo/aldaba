@@ -31,11 +31,15 @@ export class Store<T> {
     this.setState(action.payload);
     this._actions$.next(action);
   }
-  // public reduce(action: { type: string, payload: any }, reducer: (currentState: T,  payload:any)=>T  ) {
-  //   const newState = reducer(this.getSnapshot(),  action.payload);
-  //   this.setState(newState);
-  //   this._action$.next(action);
-  // }
+
+  public reduce(
+    action: { type: string; payload: any },
+    reducer: (currentState: T, payload: any) => T
+  ) {
+    const newState = reducer(this.getSnapshot(), action.payload);
+    this.setState(newState);
+    this._actions$.next(action);
+  }
 
   public getActions$() {
     return this._actions$.asObservable();
