@@ -47,10 +47,15 @@ export class ResourceNewForm implements OnInit {
       description: new FormControl('', [Validators.minLength(3)]),
       url: new FormControl('', ABValidators.includes('http')),
       price: new FormControl(0),
+      robots: new FormControl('', [
+        Validators.required,
+        ABValidators.includes('yes'),
+      ]),
       course: this.courseSubForm.buildGroup(),
     });
   }
   onSubmit() {
+    delete this.form.value.robots;
     const { resourcename: name, ...others } = this.form.value;
     const newResource: Resource = { name, ...others };
     if (newResource.categoryId !== 'courses') {

@@ -13,29 +13,36 @@
                      [form]="form"
                      formControlName="resourcename"
                      type="text"
-                     [label]="'The resource commercial name'"
-                     [placeholder]="'The ngSuperTool'">
+                     label="The resource commercial name"
+                     placeholder="The ngSuperTool">
     </ab-form-control>
     <ab-form-control
                      [form]="form"
                      formControlName="description"
                      type="text"
-                     [label]="'A short description'"
+                     label="A short description"
                      placeholder="Cool things about the resource">
     </ab-form-control>
     <ab-form-control
                      [form]="form"
                      type="url"
                      formControlName="url"
-                     [label]="'The home page'"
-                     [placeholder]="'https://www.ng-super-tool.dev'">
+                     label="The home page"
+                     placeholder="https://www.ng-super-tool.dev">
     </ab-form-control>
     <ab-form-control
                      [form]="form"
                      type="number"
                      formControlName="price"
-                     [label]="'If it is for selling (in US $)'"
-                     [placeholder]="'99.9'">
+                     label="If it is for selling (in US $)"
+                     placeholder="99.9">
+    </ab-form-control>
+    <ab-form-control
+                     [form]="form"
+                     type="text"
+                     label="Are you a human?"
+                     formControlName="robots"
+                     placeholder="Say yes if you are ot a robot">
     </ab-form-control>
     <ab-course-form [hidden]="form.value.categoryId !=='courses'"></ab-course-form>
   </fieldset>
